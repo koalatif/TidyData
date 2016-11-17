@@ -1,0 +1,6 @@
+X_test <- read.table("C:/Users/USER/Desktop/Coursera/Data science/Getting and cleaning data/Week 4/getdata_projectfiles_UCI HAR Dataset_2/UCI HAR Dataset/test/X_test.txt", quote="\"", comment.char="")
+X_train <- read.table("C:/Users/USER/Desktop/Coursera/Data science/Getting and cleaning data/Week 4/getdata_projectfiles_UCI HAR Dataset_2/UCI HAR Dataset/train/X_train.txt", quote="\"", comment.char="")
+merg=rbind(X_test,X_train)
+mean_sd=lapply(merg,sd)
+mean_merg=lapply(merg,mean)
+write.table(mean_merg,file = "mean_merg.txt", row.names = FALSE)
